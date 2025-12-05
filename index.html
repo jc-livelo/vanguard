@@ -16,8 +16,10 @@
 <body>
 <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
 <header>
-    <h1>Vaanguard</h1>
+    <h1>Vanguard</h1>
         <nav>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle"><span></span></label>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -27,9 +29,11 @@
 </header>
 <main>
     <section id="hero">
-        <h2>Innovation & Investment</h2>
-        <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success.</p>
-        <button>Request a Consultation</button>
+        <div class="hero-content">
+            <h2>Innovation & Investment</h2>
+            <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success.</p>
+            <button>Request a Consultation</button>
+        </div>
     </section>
 
     <section id="about">
@@ -136,35 +140,44 @@
 
     </section>
 
-    <section id="contact">
+ <section id="contact">
+    <div class="contact-container">
         <h2>Contact Us</h2>
         <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
 
         <form>
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname">
-
-            <label for="emailaddress">Email Address</label>
-            <input type="email" id="emailaddress">
-
-            <label for="companyname">Company Name</label>
-            <input type="text" id="companyname">
-
-            <label for="industry">Industry</label>
-            <input type="text" id="industry">
-
-            <label>How can we help you?</label>
-            <textarea></textarea>
-
-            <button type="submit">Submit</button>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname">
+            </div>
+            <div class="form-group">
+                <label for="emailaddress">Email Address</label>
+                <input type="email" id="emailaddress">
+            </div>
+            <div class="form-group">
+                <label for="companyname">Company Name</label>
+                <input type="text" id="companyname">
+            </div>
+            <div class="form-group">
+                <label for="industry">Industry</label>
+                <input type="text" id="industry">
+            </div>
+            <div class="form-group">
+                <label for="message">How can we help you?</label>
+                <textarea id="message"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
         </form>
-    </section>
+    </div>
+</section>
 
 </main>
 
 <footer>
-    <p>For educational purposes only.</p>
-    <p>Email: info@vaanguard.com</p>
+    <p>&copy;2025 For educational purposes only.</p>
+    <p>Email: <a link href="#">info@vaanguard.com</a></p>
     <p>Phone: 480.123.4567</p>
 </footer>
 
