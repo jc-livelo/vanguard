@@ -253,17 +253,142 @@ body {
 #about {
     background-color: var(--white);
     padding: 4rem 1rem;
-    text-align: center;
+    text-align: left;
+}
+
+#about h2 {
+    color: var(--black);
+    font-family: var(--font);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+#about p {
+    max-width: 480px;
+    color: var(--black);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding-left: 0.25rem;
 }
 
 #services {
     background-color: var(--white);
+    padding: 4rem 1rem;
 }
+
+#services h2 {
+    font-family: var(--font);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--black);
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--blue);
+    color: var(--white);
+    padding: 1.75rem 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+.service-card h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
 
 #results {
     background-color: var(--blue);
     color: var(--white);
     padding: 4rem 1rem;
+}
+
+#results h2 {
+    font-family: var(--font);
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#results p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#results h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.results-table {
+    width: 100%;
+    background: var(--black);
+    border-collapse: collapse;
+    color: var(--white);
+    border: 2px solid var(--charcoal);
+}
+
+.results-table table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.results-table th,
+.results-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--charcoal);
+    border-left: none;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.results-table tr:nth-child(2),
+.results-table tr:nth-child(4) {
+    background-color: var(--charcoal);
+    border-right: none;
+}
+
+.results-table th {
+    font-weight: 700;
+}
+
+.bar-chart-title {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
 }
 
 #contact {
@@ -414,7 +539,17 @@ body {
 }
 
 /* MEDIA QUERIES (MEDIUM) */ 
-@media (min-width: 992px) {
+@media (min-width: 800px) {
+
+    #about p {
+        max-width: 750px;
+        font-size: 1.1rem;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
 
     .hero-content {
         max-width: 768px;
@@ -432,26 +567,27 @@ body {
 
     .hero-content button {
         font-size: 1.05rem;
-        padding: 0.6rem 1.2rem; /* keep button smaller relative to container */
+        padding: 0.6rem 1.2rem; 
     }
 
-    #results {
-        grid-template-columns: 1fr 1fr;
+    #results h2 {
+        padding-left: 1rem;
     }
+
     .results-container {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
     }
-    .results-table {
-        width: 50%;
-    }
+
     .bar-chart {
-        width: 50%;
+        width: 100%;
     }
 }
 
 /* MEDIA QUERIES (LARGE) */
 @media (min-width: 1024px) {
+
     nav ul {
         display: flex;
         flex-direction: row;
@@ -465,12 +601,56 @@ body {
         display: none;
     }
 
+    #about p {
+        max-width: 1100px;
+        font-size: 1.15rem;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.0rem;
+    }
+
+    .results-container {
+        gap: 3rem;
+    }
+
+    .results-table-section,
+    .results-chart-section {
+        width: 50%;
+    }
+
+     #results h2 {
+        padding-left: 1rem;
+    }
+
+    #results p {
+        max-width: 900px;
+        font-size: 1.15rem;
+    }
+
+    #contact h2 {
+        padding-left: 1rem;
+    }
+
+    #contact .contact-container {
+        max-width: 1400px;
+        padding: 1rem 2rem;
+    }
+
     #contact form {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 2rem;
         row-gap: 1rem;
-        width: auto;
+        width: 100%;
+    }
+
+     .form-group input,
+    .form-group textarea,
+    .form-group button {
+        width: 100%; 
+        max-width: none; 
     }
 
     .form-group:nth-child(1) { grid-column: 1; }
